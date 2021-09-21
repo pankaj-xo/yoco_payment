@@ -1,0 +1,20 @@
+Yoco  payment
+
+###  anonymous test keys  ###
+Public Key: pk_test_ed3c54a6gOol69qa7f45
+Secret Key:  sk_test_960bfde0VBrLlpK098e4ffeb53e1
+
+
+### cards ####
+- pass card
+4111 1111 1111 1111
+
+
+ - fail card
+ 5105 1051 0510 5100
+
+
+ - personal keys
+pk_test_657b29ffyL0dlr389b04
+
+sk_test_8287293fJDRMNK4d4e0425ca1478
