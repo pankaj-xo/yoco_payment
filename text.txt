@@ -1,5 +1,6 @@
-Yoco  payment
-
+=======================================================
+                    Yoco  payment
+=======================================================
 ###  anonymous test keys  ###
 Public Key: pk_test_ed3c54a6gOol69qa7f45
 Secret Key:  sk_test_960bfde0VBrLlpK098e4ffeb53e1
@@ -18,3 +19,119 @@ Secret Key:  sk_test_960bfde0VBrLlpK098e4ffeb53e1
 pk_test_657b29ffyL0dlr389b04
 
 sk_test_8287293fJDRMNK4d4e0425ca1478
+
+
+
+========================================================
+                    pointcheckout
+========================================================
+
+
+//test api
+https://api.test.pointcheckout.com
+
+Card Number 4242 4242 4242 4242
+Expiry: 10/22
+CVV 100
+Name: Test Name
+
+
+
+
+### creating NEW CHECKOUT REQUEST
+https://api.test.pointcheckout.com/mer/v2.0/checkout/web
+
+### HEADER PARAMETERS
+X-PointCheckout-Api-Key : 17955fdeffc6dece
+X-PointCheckout-Api-Secret : mer_44a87e0139c1c5a670b2e4d95aa4b3a96023382dec8ea22ed847c9a7c41d4095
+Content-Type : application/json
+
+### REQUEST BODY
+{
+  "requestId": "CHK-100000214-r1",
+  "orderId": "CHK-100000214",
+  "currency": "AED",
+  "amount": 100,
+  "totals": {
+    "subtotal": 100,
+    "tax": 5,
+    "shipping": 3,
+    "handling": 2,
+    "discount": 10,
+    "skipTotalsValidation": false
+  },
+  "items": [
+    {
+      "name": "Dark grey sunglasses",
+      "sku": "1116521",
+      "unitprice": 50,
+      "quantity": 2,
+      "linetotal": 100
+    }
+  ],
+  "customer": {
+    "id": "123456",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "[CUSTOMER EMAIL]",
+    "phone": "[CUSTOMER PHONE]"
+  },
+  "billingAddress": {
+    "name": "[NAME]",
+    "address1": "[ADDRESS 1]",
+    "address2": "[ADDRESS 2]",
+    "city": "[CITY]",
+    "state": "[STATE]",
+    "zip": "12345",
+    "country": "AED"
+  },
+  "deliveryAddress": {
+    "name": "[NAME]",
+    "address1": "[ADDRESS 1]",
+    "address2": "[ADDRESS 2]",
+    "city": "[CITY]",
+    "state": "[STATE]",
+    "zip": "12345",
+    "country": "AED"
+  },
+  "returnUrl": "http://127.0.0.1:8000/pointpayment/payment-redirect/",
+  "branchId": 0,
+  "allowedPaymentMethods": [
+    "CARD"
+  ],
+  "defaultPaymentMethod": "CARD",
+  "language": "EN"
+}
+
+
+### GET/checkouts/{id}
+
+
+
+========================================================
+                    mobbex - simple checkout
+========================================================
+
+RESOURCE -
+  https://github.com/mgscreativa/mobbex-sdk-php
+  composer require mobbex/sdk:0.1.0
+
+
+API_KEY            9u2ZVG2Jyj3WHdboDGWrM5IJRmk1kZt8eVcDWMf0
+API_ACCESS_TOKEN   a1eee705-86be-45d9-8280-864914a1f63e
+
+CARD -
+  Expiration : 12/34 
+  Name : Demo
+  Document Number : 12123123  
+
+Visa           4507990000000010              
+Mastercard::   5323629993121008        
+
+  Cvv -  
+      Approved  200
+      Denied    400
+      On_hold   003
+
+
+  

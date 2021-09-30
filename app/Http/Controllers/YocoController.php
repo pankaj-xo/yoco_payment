@@ -19,7 +19,12 @@ class YocoController extends Controller
         $data = [
             'token' => $token,
             'amountInCents' => 2499, 
-            'currency' => 'ZAR' 
+            'currency' => 'ZAR',
+            'metadata' =>  '{
+                "test": "test",
+                "test1": "test1",
+                "test2": "test3"
+            }'
         ];
 
         $secret_key = 'sk_test_8287293fJDRMNK4d4e0425ca1478';
@@ -32,8 +37,6 @@ class YocoController extends Controller
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POST, true);
 
-        // Basic Authentication method
-        // Specify the secret key using the CURLOPT_USERPWD option
         curl_setopt($ch, CURLOPT_USERPWD, $secret_key . ":");
 
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));

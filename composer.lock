@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6cadd819a6415b190ae2704ced6e6c8b",
+    "content-hash": "1fa5c274c4082b7765567c9b5a05776d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1520,6 +1520,54 @@
                 }
             ],
             "time": "2021-01-18T20:58:21+00:00"
+        },
+        {
+            "name": "mobbex/sdk",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mgscreativa/mobbex-sdk-php.git",
+                "reference": "3d692f3028791849b1bc52756b05a39cc2aba680"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mgscreativa/mobbex-sdk-php/zipball/3d692f3028791849b1bc52756b05a39cc2aba680",
+                "reference": "3d692f3028791849b1bc52756b05a39cc2aba680",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib/mobbex.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Briglia",
+                    "email": "martin@mgscreativa.com"
+                },
+                {
+                    "name": "MGS Creativa",
+                    "email": "info@mgscreativa.com"
+                }
+            ],
+            "description": "Mobbex SDK Api Integration Library",
+            "keywords": [
+                "mobbex",
+                "sdk"
+            ],
+            "support": {
+                "issues": "https://github.com/mgscreativa/mobbex-sdk-php/issues",
+                "source": "https://github.com/mgscreativa/mobbex-sdk-php/tree/v0.1.0"
+            },
+            "time": "2020-05-21T15:03:38+00:00"
         },
         {
             "name": "monolog/monolog",
