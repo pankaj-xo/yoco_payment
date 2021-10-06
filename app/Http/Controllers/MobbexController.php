@@ -11,16 +11,17 @@ use Illuminate\Http\Request;
 
 class MobbexController extends Controller
 {
-    
+    public  $API_KEY = '9u2ZVG2Jyj3WHdboDGWrM5IJRmk1kZt8eVcDWMf0';
+    public  $API_ACCESS_TOKEN ='a1eee705-86be-45d9-8280-864914a1f63e';
+
+
     public function createCheckout()
     {
-        $API_KEY = '9u2ZVG2Jyj3WHdboDGWrM5IJRmk1kZt8eVcDWMf0';
-        $API_ACCESS_TOKEN ='a1eee705-86be-45d9-8280-864914a1f63e';
 
         $uniqid = uniqid();
 
         try {
-            $mb = new MB($API_KEY, $API_ACCESS_TOKEN);
+            $mb = new MB($this->API_KEY, $this->API_ACCESS_TOKEN);
         } catch (Exception $e) {
             return $e->getMessage() . ' ' . $e->getCode();
         }
@@ -53,7 +54,6 @@ class MobbexController extends Controller
         // print_r($result);
     }
 
-
     public function handleReturnUrl(Request $req){
                 
         if($req->transactionId){
@@ -73,14 +73,10 @@ class MobbexController extends Controller
 
     }
 
-
     public function getTransactionDetails($transactionId){
         
         $url = "https://api.mobbex.com/2.0/transactions/status";
         $payload =  [ "id" => $transactionId];
-
-        $API_KEY = '9u2ZVG2Jyj3WHdboDGWrM5IJRmk1kZt8eVcDWMf0';
-        $API_ACCESS_TOKEN ='a1eee705-86be-45d9-8280-864914a1f63e';
 
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -90,8 +86,8 @@ class MobbexController extends Controller
 
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
             'Content-Type: application/json',
-            'x-api-key: '. $API_KEY ,
-            'x-access-token: '. $API_ACCESS_TOKEN)
+            'x-api-key: '. $this->API_KEY ,
+            'x-access-token: '. $this->API_ACCESS_TOKEN)
         );
         
     
